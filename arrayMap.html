@@ -1,32 +1,76 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	<title>Array Map method</title>
+    <meta charset="utf-8">
+    <title>starter code</title>
+<link rel="stylesheet" type="text/css" href="site.css">
 </head>
 
 <body>
+    <h2>Three Button</h2>
 
-	Three Buttons
-	<br />
-	<br />
-	<br />
+    <!--<button type="button" id="button1">Button</button>
+    <div>
+        <br />
+        <input type="text" val="starting value" text="hello" id="textbox1" />
+        <br />
+        <img src="images/dog.jpg">
+        <img src="images/cat.jpg">
+        <br />
+
+    </div>-->
+
+    <label for="input1">Array 1:</label>
+    <input type="text" id="text1"><br><br>
+    <label for="input2">Array 2:</label>
+    <input type="text" id="text2"><br><br>
+    <label for="input3">Array 3:</label>
+    <input type="text" id="text3"><br><br>
+
+    <button onclick="button1()">Square</button>
+    <button id="button2">Cube</button>
+    <button id="button3">ToTheFouth</button>
 
 
-	<input type=text value="2" cols="50" id="output1" onclick="DOMContentLoaded();" ></text>
-	<br />
-	<input type=text value="3" cols="50" id="output2" ></text>
-	<br />
-	<input type=text value="4" cols="50" id="output3" ></text>
-	<br />
+    <script>
+        let origArray = [2, 3, 4];
 
-	<input type="button" value="Square" id="Square" />
-	<input type="button" value="Cube"  id="Cube" />
-	<input type="button" value="ToTheFourth" id="ToTheFourth" />
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("text1").value = origArray[0];
+            document.getElementById("text2").value = origArray[1];
+            document.getElementById("text3").value = origArray[2];
+        });
 
-	<script type="text/javascript" src="main.js"></script>
+        document.getElementById("button2").addEventListener("click", function ()
+        {
+            let newArray = origArray.map(function (num) {return num ** 3;});
 
+            document.getElementById("text1").value = newArray[0];
+            document.getElementById("text2").value = newArray[1];
+            document.getElementById("text3").value = newArray[2];
+        });
+
+        document.getElementById("button3").addEventListener("click", ToTheFouth);
+
+        function button1()
+        {
+            let newArray = origArray.map(function (num)  {return num ** 2;});
+
+            document.getElementById("text1").value = newArray[0];
+            document.getElementById("text2").value = newArray[1];
+            document.getElementById("text3").value = newArray[2];
+        }
+
+        function ToTheFouth()
+        {
+            let newArray = origArray.map(function (num) {return num ** 4;});
+
+            document.getElementById("text1").value = newArray[0];
+            document.getElementById("text2").value = newArray[1];
+            document.getElementById("text3").value = newArray[2];
+        }
+    </script>
 </body>
 
 </html>
